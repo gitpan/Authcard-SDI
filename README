@@ -1,0 +1,39 @@
+# $Id: README,v 1.3 1998/06/08 15:40:39 cvs Exp $
+
+Authcard::SDI - authentication using SecurID/ACE cards
+
+Copyright (c) 1998 Nigel Metheringham. All rights reserved.
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+Requires at least client licenses and support libraries for SecurID.
+All this was implemented and tested against the 1.3 client/server
+base.
+
+Check Makefile.PL before building - the build process needs to be told 
+where the ace directory and libraries are.
+
+Basically this module exposes the SecurID API into perl.  You can use
+it pretty much exactly as the C API.  Documentation is in the main module.
+
+There is some example code in examples that shows basic use of the
+functionality, including next code and pin functionality.
+
+The basic test functionality pretty much tests that it has compiled
+and linked OK.  To test the thing properly you need to have it check
+values - which I cannot do automatically.  Use the example code for
+this.
+
+If you are trying to use this code within a CGI script or similar, be
+aware that the SecurID system holds a lot of state, and so you cannot
+do a check() in one session and the do the next() or pin() calls in
+another session - and I have not found a way of saving the state and
+reloading it again.  I am also unconvinced that the underlying
+libraries are thread safe or even safe to have multiple objects active 
+at once (ie they use static storage someplace).
+
+Any comments or contributions, send on to
+	Nigel Metheringham <nigel@pobox.com>
+
+Please note that this is not supported, although I will look at
+maintaining it on a best efforts basis.

@@ -1,0 +1,11 @@
+Changes			Summary of changes
+MANIFEST		This file
+Makefile.PL		Basic build file
+README			Need I say more...
+SDI.pm			Perl support code
+SDI.xs			C/XS support code
+examples/basic.pl	Basic example of use
+perlobject.map		Typemaps stolen from XS cookbook examples
+sdi.h			glue file for securid definitions
+test.pl			test harness
+typemap			Basic types used in C code
